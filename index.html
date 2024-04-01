@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="we.css">
+  <script src="we.js"></script>
+  <title>GeoCountries</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+         <h1 class="weather">WEATHER</h1>
+        <ul>
+            <li><a href=""target="_blank">weather</a></li>
+            <li><a href="" target="_blank">country</a></li>
+            
+            
+        </ul>
+    </div>
+  <section id="hero">
+    <div>
+      <input class="w-card-search" type="search" name="" id="searchid">
+      <input type="button" value="Search" class="search-btn" onclick="onSearch()">
+    </div>
+    <br><br>
+    <search-row>
+      <div>
+        <p id="middle-title"
+          style="margin-bottom: 15px; filter: drop-shadow(0px 0px 100px black); font-weight: 500;">Popular Search
+        </p>
+      </div>
+      <br>
+      <div class="flex-view-popular" id="result-view">
+        <div class="item-popular">
+          <p>Southern Asia</p>
+          <p id="air" class="value"><img width="40px" style="text-align: center;" src="https://flagcdn.com/w320/bd.png"
+            alt=""> Bangladesh</p>
+          <p>Capital: Dhaka</p>
+          <p>Language: Bengali</p>
+          <p>Currencies: BDT/৳</p>
+          <p>UTC+06:00</p>
+          <button onclick="moredetails(this)" value="United States" style="font-weight: 600;
+          background-color:bisque; border: red; color: grey; text-decoration: none; cursor: pointer;">More
+            details</button>
+        </div>
+
+        <div class="item-popular">
+          <p>South-Eastern Asia</p>
+          <p id="air" class="value"><img width="40px" style="text-align: center;" src="https://flagcdn.com/w320/sg.png"
+              alt=""> Singapore</p>
+          <p>Capital: Singapore</p>
+          <p>Language: English</p>
+          <p>Currencies: SGD/$</p>
+          <p>UTC+08:00</p>
+          <button onclick="moredetails(this)" value="United States" style="font-weight: 600;
+          background-color:bisque; border: red; color: grey; text-decoration: none; cursor: pointer;">More
+            details</button>
+        </div>
+
+        <div class="item-popular">
+          <p>Western Europe</p>
+          <p id="air" class="value"><img width="40px" style="text-align: center;" src="https://flagcdn.com/w320/fr.png"
+              alt=""> France</p>
+          <p>Capital: Paris</p>
+          <p>Language: French</p>
+          <p>Currencies: EUR/€</p>
+          <p>UTC-10:00</p>
+          <button onclick="moredetails(this)" value="United States" style="font-weight: 600;
+          background-color:bisque; border: red; color: grey; text-decoration: none; cursor: pointer;">More
+            details</button>
+
+        </div>
+
+
+        <div class="item-popular">
+          <p>Eastern Asia</p>
+          <p id="air" class="value"><img width="40px" style="text-align: center;" src="https://flagcdn.com/w320/jp.png"
+              alt=""> Japan</p>
+          <p>Capital: Tokyo</p>
+          <p>Language: Japanese</p>
+          <p>Currencies: JPY/¥</p>
+          <p>UTC+09:00</p>
+          <button onclick="moredetails(this)" value="United States" style="font-weight: 600;
+          background-color:bisque; border: red; color: grey; text-decoration: none; cursor: pointer;">More
+            details</button>
+
+        </div>
+
+        <div class="item-popular">
+          <p>North America</p>
+          <p id="air" class="value"><img width="40px" style="text-align: center;" src="https://flagcdn.com/w320/us.png"
+              alt=""> United States</p>
+          <p>Capital: Washington, D.C.</p>
+          <p>Language: English</p>
+          <p>Currencies: USD/$</p>
+          <p>UTC-12:00</p>
+          <button onclick="moredetails(this)" value="United States" style="font-weight: 600;
+          background-color:bisque; border: red; color: grey; text-decoration: none; cursor: pointer;">More
+            details</button>
+        </div>
+
+      </div>
+    </search-row>
+
+    <hero-row class="hidden-helper">
+      <!-- <div>
+        <div style="display: flex; flex-direction: row; align-items: flex-end;" >
+          <input class="w-card-search" style="width: unset;" type="search" name="" id="searchid">
+          <input type="button" value="Search" class="search-btn" onclick="onSearch()">
+        </div>
+        <br><br>
+        <br><br>
+        <br><br> -->
+      <div>
+        <div>
+          <div class=""
+            style="position: relative; display: flex; justify-content: center; flex-wrap: unwarp;  bottom: -50px; transform: scale(0.7); gap: 0; min-width: 253px; margin: auto;">
+            <div class="t-card h-card" style="background: none; width: 100px;">
+              <p>Min Temp</p>
+              <p id="min_temp" class="value" style=" font-size: 1.5rem;">26°C</p>
+            </div>
+            <div class="t-card h-card" style="background: none; width: 100px;">
+              <p>Max Temp</p>
+              <p id="max_temp" class="value" style=" font-size: 1.5rem;">31°C</p>
+            </div>
+          </div>
+          <h1 id="temp" class="temp-indicator">26°C</h1>
+          <div id="condition" style="font-weight: 500; opacity: 65%; position: relative; bottom: 30px;">Haze</div>
+        </div>
+        <span id="weekday" class="day">Sunday, </span><span id="stime">23:55</span>
+        <div id="locat" class="location" style="padding-bottom: 45px;">Dhaka</div>
+      </div>
+
+      </div>
+      <div>
+        <p style="margin-bottom: 15px; filter: drop-shadow(0px 0px 100px #929094bb); font-weight: 500;">Area Details
+        </p>
+        <div id="details-box" class="forecast-box">
+
+        </div>
+        <p id="highlight" style="margin-bottom: 15px; filter: drop-shadow(0px 0px 100px #929094bb); font-weight: 500;">
+          Today's Highlight</p>
+        <div>
+          <div class="weekly-card">
+            <div class="h-card">
+              <p>Clouds</p>
+              <p id="clouds" class="value">1020</p>
+            </div>
+            <div class="h-card">
+              <p>Wind Status</p>
+              <p id="wind" class="value" style="top: -5px;">7.70</p>
+              <p style="opacity: 75%; color: var(--text-color); position: relative; bottom: 7px; font-size: 0.6rem;">
+                km/h</p>
+            </div>
+            <div class="h-card">
+              <p>Humidity</p>
+              <p id="humidity" class="value">12%</p>
+            </div>
+            <div class="h-card">
+              <p>Air Quality</p>
+              <p id="air" class="value">105</p>
+            </div>
+            <div class="h-card">
+              <p>Pressure</p>
+              <p id="pressure" class="value">1020</p>
+            </div>
+            <div class="h-card">
+              <p>Feels Like</p>
+              <p id="feels_temp" class="value">1020</p>
+            </div>
+            <div class="h-card">
+              <p>Visibility</p>
+              <p id="visibility" class="value">1020</p>
+            </div>
+            <div class="h-card">
+              <p>UV Index</p>
+              <p id="uv_index" class="value">5</p>
+            </div>
+          </div>
+        </div>
+    </hero-row>
+  </section>
+  <!-- <section id="week">
+    <div><h4>Weekly Forecast</h4></div>
+    <div class="weekly-card">
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Sunday">Sunday<img src="public/images/animated/cloudy-day-3.svg" alt=""></div>
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Monday">Monday<img src="public/images/animated/rainy-7.svg" alt=""></div>
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Tuesday">Tuesday<img src="public/images/animated/snowy-2.svg" alt=""></div>
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Wedneday">Wedneday<img src="public/images/animated/thunder.svg" alt=""></div>
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Thursday">Thursday<img src="public/images/animated/cloudy.svg" alt=""></div>
+      <div id="h-card" class="h-card" style=" color: #585858; opacity: 70%;" value="Friday">Friday<img src="public/images/animated/cloudy-day-3.svg" alt=""></div>
+    </div><br><br>
+  </section> -->
+  <footer>
+    <div class="footer-content">
+        <h1>CONTACT</h1>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+        <p> <span>&#9993;</span>WeatherAdmin121@gmail.com</p>
+        <p>&#128222; 01777396988207</p>
+        <div class="footer-bottom">
+            <p>copyright &copy; <span>Weather</span></p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
